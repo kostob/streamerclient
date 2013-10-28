@@ -1,0 +1,67 @@
+include utils.mak
+
+CFLAGS = -g -Wall
+#CFLAGS += $(call cc-option, -Wdeclaration-after-statement)
+#CFLAGS += $(call cc-option, -Wno-switch)
+#CFLAGS += $(call cc-option, -Wdisabled-optimization)
+#CFLAGS += $(call cc-option, -Wpointer-arith)
+#CFLAGS += $(call cc-option, -Wredundant-decls)
+#CFLAGS += $(call cc-option, -Wno-pointer-sign)
+#CFLAGS += $(call cc-option, -Wcast-qual)
+#CFLAGS += $(call cc-option, -Wwrite-strings)
+#CFLAGS += $(call cc-option, -Wtype-limits)
+#CFLAGS += $(call cc-option, -Wundef)
+
+#CFLAGS += $(call cc-option, -funit-at-a-time)
+
+GRAPES ?= /usr/home/tobias/dev/GRAPES
+
+CPPFLAGS = -I$(GRAPES)/include
+#CPPFLAGS += -I$(GRAPES)/src
+
+ifdef DEBUG
+CPPFLAGS += -DDEBUG
+endif
+
+#LDFLAGS = -L$(GRAPES)/src/TopologyManager -L$(GRAPES)/src/ChunkTrading -L$(GRAPES)/src/ChunkBuffer -L$(GRAPES)/src/Scheduler -L$(GRAPES)/src/PeerSet -L$(GRAPES)/src/ChunkIDSet
+#LDLIBS = -ltrading -lcb -ltopman -lsched -lpeerset -lsignalling
+LDFLAGS = -L$(GRAPES)/src
+LDLIBS = -lgrapes
+
+OBJS = main.o streaming.o topology.o output.o net_helpers.o input.o chunk_signaling.o out-stream.o
+
+# to use threads, compile with: gmake THREADS=YesPlease
+ifdef THREADS
+OBJS += loop-mt.o
+CFLAGS += -pthread
+LDFLAGS += -pthread
+else
+OBJS += loop.o
+endif
+
+# use dummy data instead of video: gmake DUMMY=Yes
+ifdef DUMMY
+#OBJS += input-stream-dummy.o
+else
+FFDIR ?= /usr/local/lib/ffmpeg2
+FFSRC ?= /usr/local/include/ffmpeg2
+#OBJS += Chunkiser/input-stream-avs.o
+LDFLAGS += -L$(FFDIR)
+LDLIBS += -lavformat2 -lavcodec2 -lavutil2
+LDLIBS += -lm
+LDLIBS += $(call ld-option, -lz)
+LDLIBS += $(call ld-option, -lbz2)
+endif
+
+EXECTARGET = streamerClient
+
+#all: $(EXECTARGET)
+all: $(OBJS)
+
+#$(EXECTARGET): $(OBJS) #$(GRAPES)/src/net_helper.o
+
+#Chunkiser/input-stream-avs.o: CPPFLAGS += -I$(FFSRC)
+
+clean:
+	rm -f $(EXECTARGET)
+	rm -f *.o

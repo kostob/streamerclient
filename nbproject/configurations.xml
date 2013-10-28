@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="StreamerClient">
+      <in>chunk_signaling.c</in>
+      <in>chunk_signaling.h</in>
+      <in>dbg.h</in>
+      <in>input-stream-dummy.c</in>
+      <in>input-stream.h</in>
+      <in>input.c</in>
+      <in>input.h</in>
+      <in>loop.c</in>
+      <in>loop.h</in>
+      <in>main.c</in>
+      <in>net_helpers.c</in>
+      <in>net_helpers.h</in>
+      <in>out-stream.c</in>
+      <in>out-stream.h</in>
+      <in>output.c</in>
+      <in>output.h</in>
+      <in>streaming.c</in>
+      <in>streaming.h</in>
+      <in>topology.c</in>
+      <in>topology.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+    </logicalFolder>
+    <itemPath>Makefile</itemPath>
+    <itemPath>Makefile_original</itemPath>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile THREADS=Yes</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>/home/tobias/dev/GRAPES2/include</pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>/home/tobias/dev/GRAPES2/include</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile_original" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chunk_signaling.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="chunk_signaling.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dbg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="input-stream-dummy.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="input-stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="input.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="loop.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="loop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="net_helpers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="net_helpers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="out-stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="out-stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="output.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="output.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="streaming.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="streaming.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="topology.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="topology.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
