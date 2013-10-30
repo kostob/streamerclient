@@ -17,13 +17,12 @@
 //Request the BufferMap
 #define MSG_SIG_BMREQ 5
 
-
 struct sig_nal {
-    uint8_t type;//type of signal.
-    uint8_t max_deliver;//Max number of chunks to deliver.
+    uint8_t type; //type of signal.
+    uint8_t max_deliver; //Max number of chunks to deliver.
     uint16_t cb_size;
-    uint16_t trans_id;//future use...
-    uint8_t third_peer;//for buffer map exchange from other peers, just the first byte!
+    uint16_t trans_id; //future use...
+    uint8_t third_peer; //for buffer map exchange from other peers, just the first byte!
 } __attribute__((packed));
 
 
@@ -38,13 +37,13 @@ int offerChunks(const struct nodeID *to_id, struct chunkID_set *cset, int max_de
 int acceptChunks(const struct nodeID *to_id, struct chunkID_set *cset, int max_deliver, int trans_id);
 
 /**
-  * Init the chunk signaling stuff...
-  *
-  *
-  * @param myID address of this peer
-  * @param pset the peerset to use
-  * @return >= 0 on success, <0 on error
-  */
+ * Init the chunk signaling stuff...
+ *
+ *
+ * @param myID address of this peer
+ * @param pset the peerset to use
+ * @return >= 0 on success, <0 on error
+ */
 int sigInit(struct nodeID *myID, struct peerset *pset);
 
 #endif

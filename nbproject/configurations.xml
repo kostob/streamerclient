@@ -1,80 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="89">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <df root="." name="StreamerClient">
-      <in>chunk_signaling.c</in>
-      <in>chunk_signaling.h</in>
-      <in>dbg.h</in>
-      <in>input-stream-dummy.c</in>
-      <in>input-stream.h</in>
-      <in>input.c</in>
-      <in>input.h</in>
-      <in>loop.c</in>
-      <in>loop.h</in>
-      <in>main.c</in>
-      <in>net_helpers.c</in>
-      <in>net_helpers.h</in>
-      <in>out-stream.c</in>
-      <in>out-stream.h</in>
-      <in>output.c</in>
-      <in>output.h</in>
-      <in>streaming.c</in>
-      <in>streaming.h</in>
-      <in>topology.c</in>
-      <in>topology.h</in>
-    </df>
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>chunk_signaling.h</itemPath>
+      <itemPath>input-stream.h</itemPath>
+      <itemPath>input.h</itemPath>
+      <itemPath>loop.h</itemPath>
+      <itemPath>net_helpers.h</itemPath>
+      <itemPath>out-stream.h</itemPath>
+      <itemPath>output.h</itemPath>
+      <itemPath>streaming.h</itemPath>
+      <itemPath>topology.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>chunk_signaling.c</itemPath>
+      <itemPath>input.c</itemPath>
+      <itemPath>loop.c</itemPath>
+      <itemPath>main.c</itemPath>
+      <itemPath>net_helpers.c</itemPath>
+      <itemPath>out-stream.c</itemPath>
+      <itemPath>output.c</itemPath>
+      <itemPath>streaming.c</itemPath>
+      <itemPath>topology.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>Makefile</itemPath>
-    <itemPath>Makefile_original</itemPath>
   </logicalFolder>
-  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
-  <sourceRootList>
-    <Elem>.</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Default" type="0">
+    <conf name="Debug" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
-        <dependencyChecking>false</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
-      <codeAssistance>
-      </codeAssistance>
-      <makefileType>
-        <makeTool>
-          <buildCommandWorkingDir>.</buildCommandWorkingDir>
-          <buildCommand>${MAKE} -f Makefile THREADS=Yes</buildCommand>
-          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath></executablePath>
-          <cTool>
-            <incDir>
-              <pElem>/home/tobias/dev/GRAPES2/include</pElem>
-            </incDir>
-          </cTool>
-          <ccTool>
-            <incDir>
-              <pElem>/home/tobias/dev/GRAPES2/include</pElem>
-            </incDir>
-          </ccTool>
-        </makeTool>
-      </makefileType>
-      <item path="Makefile" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Makefile_original" ex="false" tool="3" flavor2="0">
-      </item>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>/home/tobias/dev/GRAPES/include</pElem>
+          </incDir>
+        </cTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/home/tobias/dev/GRAPES/dist/Debug/GNU-Generic</pElem>
+          </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>.</pElem>
+          </linkerDynSerch>
+          <linkerLibItems>
+            <linkerLibLibItem>GRAPES</linkerLibLibItem>
+            <linkerLibLibItem>pthread</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
       <item path="chunk_signaling.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="chunk_signaling.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="dbg.h" ex="false" tool="3" flavor2="0">
+      <item path="input-stream.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="input-stream-dummy.c" ex="false" tool="0" flavor2="0">
+      <item path="input.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="loop.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="loop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="net_helpers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="net_helpers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="out-stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="out-stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="output.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="output.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="streaming.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="streaming.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="topology.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="topology.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>true</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/home/tobias/dev/GRAPES/include</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/home/tobias/dev/GRAPES/dist/Release/GNU-Generic</pElem>
+          </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>.</pElem>
+          </linkerDynSerch>
+          <linkerLibItems>
+            <linkerLibLibItem>GRAPES</linkerLibLibItem>
+            <linkerLibLibItem>pthread</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="chunk_signaling.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="chunk_signaling.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="input-stream.h" ex="false" tool="3" flavor2="0">
       </item>

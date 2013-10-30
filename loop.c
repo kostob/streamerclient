@@ -29,44 +29,6 @@ static pthread_mutex_t topology_mutex;
 static struct nodeID *s;
 static struct peerset *pset;
 
-static void *chunk_forging(void *dummy) {
-    suseconds_t d;
-
-    while (!done) {
-        pthread_mutex_lock(&cb_mutex);
-        generated_chunk(&d);
-        pthread_mutex_unlock(&cb_mutex);
-        usleep(d);
-    }
-
-    return NULL;
-}
-
-static void *source_receive(void *dummy) {
-    while (!done) {
-        int len;
-        struct nodeID *remote;
-        static uint8_t buff[BUFFSIZE];
-
-        len = recv_from_peer(s, &remote, buff, BUFFSIZE);
-        switch (buff[0] /* Message Type */) {
-            case MSG_TYPE_TOPOLOGY:
-                pthread_mutex_lock(&topology_mutex);
-                update_peers(pset, buff, len);
-                pthread_mutex_unlock(&topology_mutex);
-                break;
-            case MSG_TYPE_CHUNK:
-                fprintf(stderr, "Some dumb peer pushed a chunk to me!\n");
-                break;
-            default:
-                fprintf(stderr, "Unknown Message Type %x\n", buff[0]);
-        }
-        nodeid_free(remote);
-    }
-
-    return NULL;
-}
-
 static void *receive(void *dummy) {
     while (!done) {
         int len;

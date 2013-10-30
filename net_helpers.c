@@ -16,8 +16,7 @@
 
 #include "net_helpers.h"
 
-char *iface_addr(const char *iface)
-{
+char *iface_addr(const char *iface) {
     int s, res;
     struct ifreq iface_request;
     struct sockaddr_in *sin;
@@ -28,8 +27,8 @@ char *iface_addr(const char *iface)
         return NULL;
     }
 
-    memset(&iface_request, 0, sizeof(struct ifreq));
-    sin = (struct sockaddr_in *)&iface_request.ifr_addr;
+    memset(&iface_request, 0, sizeof (struct ifreq));
+    sin = (struct sockaddr_in *) &iface_request.ifr_addr;
     strcpy(iface_request.ifr_name, iface);
     /* sin->sin_family = AF_INET); */
     res = ioctl(s, SIOCGIFADDR, &iface_request);
@@ -41,10 +40,7 @@ char *iface_addr(const char *iface)
     }
     close(s);
 
-    inet_ntop(AF_INET, &sin->sin_addr, buff, sizeof(buff));
+    inet_ntop(AF_INET, &sin->sin_addr, buff, sizeof (buff));
 
     return strdup(buff);
 }
-
-
-

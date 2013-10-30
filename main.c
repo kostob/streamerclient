@@ -8,13 +8,14 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+
+// GRAPES
 #include <net_helper.h> // from GRAPES
 #include <topmanager.h>
+
 #include "net_helpers.h"
 
-//#include "GRAPES/som/net_helper.h"
-
-static const char *my_iface = "eth0";
+static const char *my_iface = "lo0";
 static int port = 6666;
 static int srv_port;
 static const char *srv_ip = "";

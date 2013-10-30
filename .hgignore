@@ -1,5 +1,3 @@
-\.a$
-\.o$
-\.so$
 ^nbproject/private$
-^streamerClient$
+^build$
+^dist$
